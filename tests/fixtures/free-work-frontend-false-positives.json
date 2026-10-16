@@ -1,0 +1,167 @@
+{
+  "note": "Synthetic offers authored for regression tests; no captured job advertisements.",
+  "offers": [
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-0",
+      "url": "https://example.test/jobs/0",
+      "title": "Développeur Frontend React",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": ["React"],
+      "description": null,
+      "accepted": true
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-1",
+      "url": "https://example.test/jobs/1",
+      "title": "Développeur ReactJS",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": ["ReactJS"],
+      "description": null,
+      "accepted": true
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-2",
+      "url": "https://example.test/jobs/2",
+      "title": "Développeur web Vue.js",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": ["Vue.js"],
+      "description": null,
+      "accepted": true
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-3",
+      "url": "https://example.test/jobs/3",
+      "title": "Product Engineer",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": ["Next.js"],
+      "description": null,
+      "accepted": true
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-4",
+      "url": "https://example.test/jobs/4",
+      "title": "Tech Lead Cloud",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": ["Vue.js"],
+      "description": null,
+      "accepted": false
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-5",
+      "url": "https://example.test/jobs/5",
+      "title": "Chef de projet SAP",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": [],
+      "description": "En vue de la livraison",
+      "accepted": false
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-6",
+      "url": "https://example.test/jobs/6",
+      "title": "Développeur web",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": [],
+      "description": "Revue de code sans React",
+      "accepted": false
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-7",
+      "url": "https://example.test/jobs/7",
+      "title": "Développeur React Java",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": ["React", "Java"],
+      "description": null,
+      "accepted": false
+    },
+    {
+      "provider": "free-work",
+      "providerOfferId": "synthetic-8",
+      "url": "https://example.test/jobs/8",
+      "title": "Développeur PHP",
+      "company": "Example Company",
+      "publishedAt": null,
+      "contractTypes": ["freelance"],
+      "dailyRate": {
+        "min": 450,
+        "max": 600
+      },
+      "location": null,
+      "remote": "unknown",
+      "skills": ["PHP"],
+      "description": "React",
+      "accepted": false
+    }
+  ]
+}

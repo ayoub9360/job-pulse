@@ -1,0 +1,11 @@
+.git
+.github
+node_modules
+dist
+coverage
+.env
+.env.*
+data
+config/*.yaml
+!config/config.example.yaml
+tests

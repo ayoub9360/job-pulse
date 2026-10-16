@@ -1,0 +1,173 @@
+# Synthetic regression settings. These are not deployment presets.
+providers:
+  freeWork:
+    baseUrl: https://example.test/jobs
+  collective:
+    baseUrl: https://example.test/graphql
+watchers:
+  - provider: &a1
+      - free-work
+      - collective
+    contracts: &a2
+      - freelance
+    maxPages: 1
+    minDailyRate: 450
+    excludedKeywords: &a3
+      - keyword: java
+        match: whole-word
+      - php
+      - .net
+      - c#
+    name: frontend
+    queries:
+      - react
+      - vue
+      - next
+      - nuxt
+    requiredKeywordGroups:
+      - &a4
+        - React
+        - ReactJS
+        - React.js
+        - Next
+        - NextJS
+        - Next.js
+        - Vue
+        - VueJS
+        - Vue.js
+        - Nuxt
+        - NuxtJS
+        - Nuxt.js
+    requiredKeywordScope: title-skills
+    requiredTitleKeywords:
+      - frontend
+      - front-end
+      - front
+      - développeur
+      - développeuse
+      - developer
+      - software engineer
+      - product engineer
+      - web engineer
+      - lead developpeur
+    webhookEnv: TEST_FRONTEND_WEBHOOK
+  - provider: *a1
+    contracts: *a2
+    maxPages: 1
+    minDailyRate: 450
+    excludedKeywords: []
+    name: data
+    queries:
+      - data engineer
+    webhookEnv: TEST_DATA_WEBHOOK
+  - provider: *a1
+    contracts: *a2
+    maxPages: 1
+    minDailyRate: 450
+    excludedKeywords: *a3
+    name: fullstack
+    queries:
+      - fullstack
+      - full stack
+      - full-stack
+    requiredKeywordGroups:
+      - *a4
+      - - Node
+        - NodeJS
+        - Node.js
+        - Nest
+        - NestJS
+        - Nest.js
+        - Express
+        - ExpressJS
+        - Express.js
+        - Python
+        - FastAPI
+        - Fast API
+        - Fastify
+    webhookEnv: TEST_FULLSTACK_WEBHOOK
+  - name: contracts
+    provider: *a1
+    contracts:
+      - cdi
+    queries:
+      - contrôleur
+      - contrôleuse
+      - contrôle de gestion
+      - business controller
+      - management controller
+    requiredTitleKeywords:
+      - contrôleur de gestion
+      - contrôleuse de gestion
+      - contrôleur(-se) de gestion
+      - contrôleur(se) de gestion
+      - contrôleur.se de gestion
+      - contrôle de gestion
+      - business controller
+      - management controller
+    excludedTitleKeywords:
+      - SAP
+      - MOA
+      - AMOA
+      - MOE
+      - consultant fonctionnel
+      - transformation
+    webhookEnv: TEST_CONTRACT_WEBHOOK
+  - provider: *a1
+    contracts: *a2
+    maxPages: 1
+    minDailyRate: 450
+    excludedKeywords: *a3
+    name: groups
+    queries:
+      - IA
+      - AI
+      - LLM
+      - RAG
+      - LangGraph
+      - LangChain
+      - GenAI
+      - retrieval
+    requiredTitleKeywords:
+      - développeur
+      - développeuse
+      - developer
+      - software engineer
+      - product engineer
+      - AI engineer
+      - ingénieure IA
+      - ingénieur IA
+      - fullstack
+    excludedTitleKeywords:
+      - data scientist
+      - data engineer
+      - architecte
+      - chef de projet
+      - consultant stratégie
+      - research scientist
+      - stage
+      - alternance
+    requiredKeywordGroups:
+      - - RAG
+        - LLM
+        - LLMs
+        - AI agents
+        - agents IA
+        - GenAI
+        - Google ADK
+        - LangChain
+        - LangGraph
+        - retrieval
+      - - Python
+        - TypeScript
+        - JavaScript
+        - Node.js
+        - React
+        - FastAPI
+    webhookEnv: TEST_GROUP_WEBHOOK
+schedule:
+  cron: "*/30 * * * *"
+  timezone: UTC
+runtime:
+  userAgent: JobWatcher/test
+  maxNotificationsPerRun: 20

@@ -1,0 +1,20 @@
+services:
+  job-watcher:
+    build: .
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 35s
+    env_file: .env
+    environment:
+      CONFIG_PATH: /app/config/config.yaml
+      STATE_PATH: /app/data/seen-offers.json
+    volumes:
+      - type: bind
+        source: ./config/config.yaml
+        target: /app/config/config.yaml
+        read_only: true
+        bind:
+          create_host_path: false
+      - job-watcher-data:/app/data
+volumes:
+  job-watcher-data:

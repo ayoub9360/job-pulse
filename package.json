@@ -1,0 +1,42 @@
+{
+  "name": "job-watcher-community",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "start": "node dist/main.js",
+    "build": "tsc -p tsconfig.json",
+    "check": "biome check . && tsc -p tsconfig.json --noEmit && tsc -p tsconfig.tests.json",
+    "format": "biome check --write .",
+    "test": "vitest run",
+    "validate-config": "tsx src/validate-config.ts"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "dotenv": "^18.0.8",
+    "node-cron": "^4.6.0",
+    "pino": "^10.4.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@types/node": "^24.19.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  },
+  "packageManager": "pnpm@10.34.7",
+  "license": "MIT",
+  "description": "Configurable job monitoring with Discord notifications",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=10 <11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoub9360/job-watcher-community.git"
+  }
+}

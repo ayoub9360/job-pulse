@@ -1,0 +1,20 @@
+# Copy to config/config.yaml (ignored by Git) and customize.
+providers:
+  freeWork:
+    baseUrl: "https://www.free-work.com/fr/tech-it/jobs"
+watchers:
+  - name: example
+    provider: free-work
+    queries: ["typescript"]
+    contracts: ["freelance"]
+    maxPages: 1
+    webhookEnv: DISCORD_WEBHOOK_URL
+    mentionHere: false
+schedule:
+  cron: "*/30 * * * *"
+  timezone: Europe/Paris
+runtime:
+  userAgent: "JobWatcher/0.1"
+  requestTimeoutMs: 10000
+  retryCount: 2
+  maxNotificationsPerRun: 10
