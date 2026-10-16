@@ -79,7 +79,7 @@ Connectors are **where matching offers are sent**. Discord is the only connector
 ### 1. Get the project
 
 ```sh
-git clone https://github.com/ayoub9360/job-watcher-community.git job-pulse
+git clone https://github.com/ayoub9360/job-pulse.git job-pulse
 cd job-pulse
 cp config/config.example.yaml config/config.yaml
 cp .env.example .env
