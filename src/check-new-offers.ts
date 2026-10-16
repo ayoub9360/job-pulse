@@ -15,7 +15,7 @@ export type CheckNewOffersSummary = {
   failedSearches?: number;
 };
 
-export type JobWatcher = {
+export type Watcher = {
   name: string;
   provider: JobProvider;
   filters: ProviderSearchFilters;
@@ -23,7 +23,7 @@ export type JobWatcher = {
 };
 
 type CheckNewOffersInput = {
-  watchers: JobWatcher[];
+  watchers: Watcher[];
   seenOffersStore: SeenOffersStore;
   maxNotificationsPerRun?: number;
 };

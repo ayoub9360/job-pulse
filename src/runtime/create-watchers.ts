@@ -1,4 +1,4 @@
-import type { JobWatcher } from "../check-new-offers.js";
+import type { Watcher } from "../check-new-offers.js";
 import type { AppConfig } from "../config/config.schema.js";
 import { DiscordNotifier } from "../notifications/discord.notifier.js";
 import type { Notifier } from "../notifications/notifier.js";
@@ -26,8 +26,8 @@ export function createWatchers({
   providersById,
   createNotifier = (options) => new DiscordNotifier(options),
   logger = defaultLogger,
-}: CreateWatchersInput): JobWatcher[] {
-  const watchers: JobWatcher[] = [];
+}: CreateWatchersInput): Watcher[] {
+  const watchers: Watcher[] = [];
 
   for (const watcherConfig of config.watchers) {
     if (!watcherConfig.enabled) {

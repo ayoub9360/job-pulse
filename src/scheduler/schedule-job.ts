@@ -30,7 +30,7 @@ export function scheduleJob({
   cronImpl = cron,
 }: ScheduleJobInput): ScheduledTask {
   return cronImpl.schedule(cronExpression, run, {
-    name: "job-watcher",
+    name: "job-pulse",
     timezone,
     noOverlap: true,
   });

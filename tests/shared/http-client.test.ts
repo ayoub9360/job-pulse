@@ -6,7 +6,7 @@ describe("createHttpClient", () => {
   it("fetches text with the configured user agent", async () => {
     const requestedHeaders: HeadersInit[] = [];
     const fetchText = createHttpClient({
-      userAgent: "free-work-watcher/test",
+      userAgent: "job-pulse/test",
       timeoutMs: 1_000,
       retryCount: 0,
       fetchImpl: async (_url, init) => {
@@ -17,14 +17,14 @@ describe("createHttpClient", () => {
 
     await expect(fetchText(new URL("https://example.com"))).resolves.toBe("ok");
     expect(new Headers(requestedHeaders[0]).get("user-agent")).toBe(
-      "free-work-watcher/test",
+      "job-pulse/test",
     );
   });
 
   it("fetches text with additional configured headers", async () => {
     const requestedHeaders: HeadersInit[] = [];
     const fetchText = createHttpClient({
-      userAgent: "free-work-watcher/test",
+      userAgent: "job-pulse/test",
       timeoutMs: 1_000,
       retryCount: 0,
       headers: {
@@ -46,7 +46,7 @@ describe("createHttpClient", () => {
   it("retries failed HTTP responses", async () => {
     let calls = 0;
     const fetchText = createHttpClient({
-      userAgent: "free-work-watcher/test",
+      userAgent: "job-pulse/test",
       timeoutMs: 1_000,
       retryCount: 1,
       fetchImpl: async () => {
@@ -68,7 +68,7 @@ describe("createHttpClient", () => {
     }> = [];
     let calls = 0;
     const fetchText = createHttpClient({
-      userAgent: "free-work-watcher/test",
+      userAgent: "job-pulse/test",
       timeoutMs: 1_000,
       retryCount: 1,
       logger: {

@@ -62,7 +62,7 @@ schedule:
   cron: "* * * * *"
   timezone: Europe/Paris
 runtime:
-  userAgent: "free-work-watcher/0.1"
+  userAgent: "job-pulse/0.1"
 `,
       "utf8",
     );
@@ -135,7 +135,7 @@ watchers:
 schedule:
   cron: "* * * * *"
 runtime:
-  userAgent: "free-work-watcher/0.1"
+  userAgent: "job-pulse/0.1"
 `,
       "utf8",
     );
@@ -194,7 +194,7 @@ watchers:
 schedule:
   cron: "* * * * *"
 runtime:
-  userAgent: "free-work-watcher/0.1"
+  userAgent: "job-pulse/0.1"
 `,
       "utf8",
     );

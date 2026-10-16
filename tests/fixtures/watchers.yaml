@@ -169,5 +169,5 @@ schedule:
   cron: "*/30 * * * *"
   timezone: UTC
 runtime:
-  userAgent: JobWatcher/test
+  userAgent: job-pulse/test
   maxNotificationsPerRun: 20

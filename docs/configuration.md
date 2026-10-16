@@ -12,7 +12,7 @@ Copy `config/config.example.yaml` to the ignored `config/config.yaml`. `CONFIG_P
 | `pylote` | `pylote` | `https://api-prod.pylote.io` | `PYLOTE_API_KEY` |
 | `collective` | `collective` | `https://api.collective.work/graphql` | No authentication in this adapter; separate authorization required |
 
-Collective optionally accepts `userAgent` (default `JobWatcher/0.1`). Check [provider restrictions](providers.md); an endpoint being reachable does not grant permission to automate it. Production endpoints and webhooks should use HTTPS. Do not put credentials in endpoint URLs. HTTP is supported for local integration tests. HTTP GET redirects are rejected to avoid sending credentials to unintended endpoints.
+Collective optionally accepts `userAgent` (default `job-pulse/0.1`). Check [provider restrictions](providers.md); an endpoint being reachable does not grant permission to automate it. Production endpoints and webhooks should use HTTPS. Do not put credentials in endpoint URLs. HTTP is supported for local integration tests. HTTP GET redirects are rejected to avoid sending credentials to unintended endpoints.
 
 ## Watchers
 

@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { checkNewOffers, type JobWatcher } from "./check-new-offers.js";
+import { checkNewOffers, type Watcher } from "./check-new-offers.js";
 import type { AppConfig } from "./config/config.schema.js";
 import { loadConfig } from "./config/load-config.js";
 import { CollectiveProvider } from "./providers/collective/collective.provider.js";
@@ -57,7 +57,7 @@ async function main(): Promise<void> {
       timezone: config.schedule.timezone,
       watcherCount: runtime.watchers.length,
     },
-    "job watcher started",
+    "job-pulse started",
   );
 
   const shutdown = async () => {
@@ -75,7 +75,7 @@ async function main(): Promise<void> {
       /* Already logged by the scheduled run. */
     }
     clearTimeout(deadline);
-    logger.info({}, "job watcher stopped");
+    logger.info({}, "job-pulse stopped");
     process.exit(0);
   };
   process.on("SIGTERM", shutdown);
@@ -172,11 +172,11 @@ async function runCheck(runtime: Runtime): Promise<void> {
 
 type Runtime = {
   maxNotificationsPerRun: number;
-  watchers: JobWatcher[];
+  watchers: Watcher[];
   seenOffersStore: SeenOffersStore;
 };
 
 main().catch((error) => {
-  logger.error({ err: error }, "job watcher failed");
+  logger.error({ err: error }, "job-pulse failed");
   process.exit(1);
 });

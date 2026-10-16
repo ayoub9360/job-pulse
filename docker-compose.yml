@@ -1,5 +1,5 @@
 services:
-  job-watcher:
+  job-pulse:
     build: .
     restart: unless-stopped
     init: true
@@ -15,6 +15,6 @@ services:
         read_only: true
         bind:
           create_host_path: false
-      - job-watcher-data:/app/data
+      - job-pulse-data:/app/data
 volumes:
-  job-watcher-data:
+  job-pulse-data:

@@ -4,7 +4,7 @@ import YAML from "yaml";
 
 it("mounts user config read-only and accepts arbitrary webhook env names", async () => {
   const compose = YAML.parse(await readFile("docker-compose.yml", "utf8"));
-  const service = compose.services["job-watcher"];
+  const service = compose.services["job-pulse"];
   expect(service.env_file).toBe(".env");
   expect(service.volumes[0]).toMatchObject({
     type: "bind",

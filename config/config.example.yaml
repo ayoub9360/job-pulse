@@ -14,7 +14,7 @@ schedule:
   cron: "*/30 * * * *"
   timezone: Europe/Paris
 runtime:
-  userAgent: "JobWatcher/0.1"
+  userAgent: "job-pulse/0.1"
   requestTimeoutMs: 10000
   retryCount: 2
   maxNotificationsPerRun: 10

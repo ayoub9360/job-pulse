@@ -23,6 +23,6 @@ jobs:
       - run: pnpm build
       - run: pnpm audit --audit-level=moderate
       - run: CONFIG_PATH=config/config.example.yaml pnpm validate-config
-      - run: docker build -t job-watcher-ci .
-      - run: SMOKE_IMAGE=job-watcher-ci python3 tests/deployment/container-smoke.py
+      - run: docker build -t job-pulse-ci .
+      - run: SMOKE_IMAGE=job-pulse-ci python3 tests/deployment/container-smoke.py
       - run: docker run --rm -v "$PWD:/repo:ro" zricethezav/gitleaks:v8.30.0 git /repo --redact --no-banner

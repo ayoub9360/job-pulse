@@ -24,7 +24,7 @@ describe("scheduleJob", () => {
       "* * * * *",
       expect.any(Function),
       {
-        name: "job-watcher",
+        name: "job-pulse",
         timezone: "Europe/Paris",
         noOverlap: true,
       },

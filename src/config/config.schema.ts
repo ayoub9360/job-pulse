@@ -102,7 +102,7 @@ export const appConfigSchema = z
       collective: z
         .object({
           baseUrl: httpUrlSchema,
-          userAgent: z.string().min(1).default("JobWatcher/0.1"),
+          userAgent: z.string().min(1).default("job-pulse/0.1"),
         })
         .optional(),
     }),

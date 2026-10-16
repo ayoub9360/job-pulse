@@ -9,8 +9,8 @@ import threading
 import time
 import uuid
 
-image = os.environ.get("SMOKE_IMAGE", "job-watcher-community:verify")
-name = "job-watcher-smoke-" + uuid.uuid4().hex[:12]
+image = os.environ.get("SMOKE_IMAGE", "job-pulse:verify")
+name = "job-pulse-smoke-" + uuid.uuid4().hex[:12]
 volume = name + "-data"
 notifications = []
 request_started = threading.Event()
@@ -54,7 +54,7 @@ threading.Thread(target=server.serve_forever, daemon=True).start()
 origin = f"http://127.0.0.1:{server.server_port}"
 try:
     docker("volume", "create", volume)
-    with tempfile.TemporaryDirectory(prefix="job-watcher-smoke-") as folder:
+    with tempfile.TemporaryDirectory(prefix="job-pulse-smoke-") as folder:
         os.chmod(folder, 0o755)
         config_path = pathlib.Path(folder) / "config.yaml"
         config = {
@@ -62,7 +62,7 @@ try:
             "watchers": [{"name": "synthetic", "provider": "free-work", "queries": ["typescript"],
                           "webhookEnv": "TEST_WEBHOOK"}],
             "schedule": {"cron": "* * * * * *", "timezone": "UTC"},
-            "runtime": {"userAgent": "JobWatcher/test", "retryCount": 0},
+            "runtime": {"userAgent": "job-pulse/test", "retryCount": 0},
         }
         config_path.write_text(json.dumps(config))
         args = ["--network", "host", "-v", f"{config_path}:/app/config/config.yaml:ro",
